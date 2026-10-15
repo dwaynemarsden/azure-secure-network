@@ -10,12 +10,12 @@ param subnetName string = 'app-subnet'
 @description ('NSG Name')
 param nsgName string = 'nsg-secure-demo'
 
-resource nsg 'microsoft.network/networkSecurityGroups@2023-09-01' = {
+resource nsg 'Microsoft.Network/networkSecurityGroups@2023-09-01' = {
 name: nsgName
 location: location
 }
 
-resource vnet 'microsoft.network/virtualNetworks@2023-09-01' = {
+resource vnet 'Microsoft.Network/virtualNetworks@2023-09-01' = {
 name: vnetName
 location: location
 
@@ -25,7 +25,6 @@ properties: {
 '10.10.0.0/16'
       ]
 }
-
 subnets: [
 {
   name: subnetName
