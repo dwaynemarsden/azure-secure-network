@@ -10,6 +10,11 @@ param subnetName string = 'app-subnet'
 @description ('NSG Name')
 param nsgName string = 'nsg-secure-demo'
 
+resource nsg 'microsoft.networks/networkSecurityGroups@2023-09-01' = {
+name: nsgname
+loaction: location
+}
+
 resource vnet 'microsoft.network/virtualNetworks@2023-09-01' = {
 name: vnetName
 location: location
@@ -37,4 +42,4 @@ addressPrefix: '10.10.1.0/24'
 }
 
 output vnetId string = vnet.id
-output subnetName string = subnetname 
+output subnetName string = subnetName 
